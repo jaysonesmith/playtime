@@ -8,12 +8,6 @@
 
 # Offense count: 1
 # Cop supports --auto-correct.
-Layout/ClosingParenthesisIndentation:
-  Exclude:
-    - 'spec/lib/amazon_product_api/http_client_spec.rb'
-
-# Offense count: 1
-# Cop supports --auto-correct.
 Layout/CommentIndentation:
   Exclude:
     - 'spec/spec_helper.rb'

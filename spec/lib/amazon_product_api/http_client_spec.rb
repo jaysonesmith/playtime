@@ -16,7 +16,7 @@ describe AmazonProductAPI::HTTPClient do
         .to raise_error(AmazonProductAPI::InvalidQueryError,
                         "Environment variables AWS_ACCESS_KEY, AWS_SECRET_KEY, and " +
                         "AWS_ASSOCIATES_TAG are required values. Please make sure they're set."
-        )
+                       )
     end
   end
 
