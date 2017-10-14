@@ -41,7 +41,7 @@ describe Pledge do
 
     context "when the user and wishlist are duplicated" do
       subject { build(:pledge, user: initial_pledge.user,
-                      wishlist_item: initial_pledge.wishlist_item) }
+                               wishlist_item: initial_pledge.wishlist_item) }
       it { should_not be_valid }
     end
 

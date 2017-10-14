@@ -139,7 +139,7 @@ describe PledgesController, type: :controller do
         it "returns a success response (i.e. to display the 'edit' template)" do
           pledge = create(:pledge, user: pledging_user)
           put :update, params: {id: pledge.id, pledge: invalid_attributes},
-                      session: user_session
+                       session: user_session
           expect(response).to be_success
         end
       end
@@ -169,7 +169,7 @@ describe PledgesController, type: :controller do
         it "returns a success response (i.e. to display the 'edit' template)" do
           pledge = create(:pledge, :with_user)
           put :update, params: {id: pledge.id, pledge: invalid_attributes},
-                      session: admin_session
+                       session: admin_session
           expect(response).to be_success
         end
       end

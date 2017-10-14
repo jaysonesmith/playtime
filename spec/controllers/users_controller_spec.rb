@@ -129,7 +129,7 @@ describe UsersController do
         it "returns a success response (i.e. to display the 'edit' template)" do
           user = User.create! valid_attributes
           put :update, params: {id: user.to_param, user: invalid_attributes},
-                      session: admin_session
+                       session: admin_session
           expect(response).to be_success
         end
       end
