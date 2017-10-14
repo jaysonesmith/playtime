@@ -170,7 +170,7 @@ describe User do
       end
 
       it "should not change the number of users" do
-        expect { matched_user }.not_to change { User.count }
+        expect { matched_user }.not_to(change { User.count })
       end
     end
 
@@ -182,7 +182,7 @@ describe User do
       end
 
       it "should not change the number of users" do
-        expect { matched_user }.not_to change { User.count }
+        expect { matched_user }.not_to(change { User.count })
       end
     end
 

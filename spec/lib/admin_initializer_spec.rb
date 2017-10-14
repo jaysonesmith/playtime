@@ -76,7 +76,7 @@ describe AdminInitializer do
 
       describe "the total number of users" do
         it "should not change" do
-          expect { initializer.promote_or_create_admin }.not_to change { User.count }
+          expect { initializer.promote_or_create_admin }.not_to(change { User.count })
         end
       end
 
