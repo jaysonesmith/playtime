@@ -48,14 +48,6 @@ Style/GuardClause:
     - 'lib/admin_initializer.rb'
     - 'lib/amazon_product_api/http_client.rb'
 
-# Offense count: 2
-# Cop supports --auto-correct.
-# Configuration parameters: MaxLineLength.
-Style/IfUnlessModifier:
-  Exclude:
-    - '.pryrc'
-    - 'config/initializers/rollbar.rb'
-
 # Offense count: 1
 # Cop supports --auto-correct.
 Style/LineEndConcatenation:
