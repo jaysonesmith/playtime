@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 describe UsersController do
-
   # This should return the minimal set of attributes required to create a valid
   # User. As you add validations to User, be sure to
   # adjust the attributes here as well.
@@ -167,5 +166,4 @@ describe UsersController do
       end
     end
   end
-
 end

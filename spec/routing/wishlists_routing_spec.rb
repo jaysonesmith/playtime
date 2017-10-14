@@ -2,7 +2,6 @@ require "rails_helper"
 
 RSpec.describe WishlistsController, type: :routing do
   describe "routing" do
-
     it "routes to #new" do
       expect(:get => "/wishlists/new").to route_to("wishlists#new")
     end
@@ -30,6 +29,5 @@ RSpec.describe WishlistsController, type: :routing do
     it "routes to #destroy" do
       expect(:delete => "/wishlists/1").to route_to("wishlists#destroy", :id => "1")
     end
-
   end
 end

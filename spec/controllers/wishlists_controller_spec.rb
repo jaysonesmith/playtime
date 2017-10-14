@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 describe WishlistsController do
-
   # This should return the minimal set of attributes required to create a valid
   # Wishlist. As you add validations to Wishlist, be sure to
   # adjust the attributes here as well.

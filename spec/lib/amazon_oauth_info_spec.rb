@@ -39,5 +39,4 @@ describe "AmazonOAuthInfo" do
     subject { amazon_info.zipcode }
     it { should eq 54321 }
   end
-
 end

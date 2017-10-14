@@ -15,7 +15,6 @@
 require 'spec_helper'
 
 describe User do
-
   # Default Values
 
   context "with the default (non-required) attributes" do

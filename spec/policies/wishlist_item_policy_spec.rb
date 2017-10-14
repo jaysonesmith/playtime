@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 describe WishlistItemPolicy do
-
   let(:wishlist) { create(:wishlist, :with_item) }
   let(:wishlist_item) { wishlist.wishlist_items.first }
 

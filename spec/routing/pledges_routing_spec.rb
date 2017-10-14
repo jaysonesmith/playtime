@@ -2,7 +2,6 @@ require "rails_helper"
 
 RSpec.describe PledgesController, type: :routing do
   describe "routing" do
-
     it "routes to #index" do
       expect(:get => "/pledges").to route_to("pledges#index")
     end
@@ -30,6 +29,5 @@ RSpec.describe PledgesController, type: :routing do
     it "routes to #destroy" do
       expect(:delete => "/pledges/1").to route_to("pledges#destroy", :id => "1")
     end
-
   end
 end

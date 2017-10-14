@@ -13,7 +13,6 @@
 require "rails_helper"
 
 describe Pledge do
-
   # validations
 
   describe "without an associated wishlist item" do
