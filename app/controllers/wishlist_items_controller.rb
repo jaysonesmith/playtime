@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class WishlistItemsController < ApplicationController
   before_action :set_wishlist_item, only: [:edit, :update, :destroy]
 

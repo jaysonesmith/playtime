@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'amazon_product_api/http_client'
 
 describe AmazonProductAPI::HTTPClient do

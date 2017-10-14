@@ -40,13 +40,6 @@ Naming/PredicateName:
 Style/Documentation:
   Enabled: false
 
-# Offense count: 133
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, SupportedStyles.
-# SupportedStyles: when_needed, always, never
-Style/FrozenStringLiteralComment:
-  Enabled: false
-
 # Offense count: 3
 # Configuration parameters: MinBodyLength.
 Style/GuardClause:

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module ApplicationHelper
   def pronoun(user, *args)
     current_user_pronouns(user, %w(you they), *args)

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class SessionsController < ApplicationController
   before_action :skip_authorization
   skip_before_action :verify_authenticity_token, if: :should_skip_csrf_check?

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'amazon_oauth_info'
 
 describe 'AmazonOAuthInfo' do

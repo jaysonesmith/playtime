@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 ##
 # Generates CSV from ActiveRecord model attributes
 #

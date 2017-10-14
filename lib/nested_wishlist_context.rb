@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Required for AmazonSearchPolicy
 #
 # The AmazonSearchController is a modelless, nested controller under Wishlist.

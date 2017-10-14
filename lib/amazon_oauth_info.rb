@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AmazonOAuthInfo
   attr_reader :hash
 

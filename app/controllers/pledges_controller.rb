@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class PledgesController < ApplicationController
   before_action :set_pledge, only: [:show, :edit, :update, :destroy]
 

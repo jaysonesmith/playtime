@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 ##
 # Represents a logged-out (guest) User
 #

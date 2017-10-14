@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 ##
 # Initializes an admin user from ENV
 #

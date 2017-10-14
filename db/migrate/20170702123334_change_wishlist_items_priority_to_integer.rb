@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ChangeWishlistItemsPriorityToInteger < ActiveRecord::Migration[5.1]
   def change
     remove_column :wishlist_items, :priority, :string

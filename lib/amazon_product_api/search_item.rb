@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module AmazonProductAPI
   # Represents an individual Amazon item listing
   class SearchItem

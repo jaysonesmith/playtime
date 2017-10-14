@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'active_record_csv_generator'
 
 describe ActiveRecordCSVGenerator do
