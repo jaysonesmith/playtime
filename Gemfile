@@ -75,6 +75,8 @@ group :development do
   gem 'spring-commands-rspec', '~> 1.0'
   # Helps detect N+1 queries and unused eager loading
   gem 'bullet'
+  # Ruby's style guide enforcer
+  gem 'rubocop'
 end
 
 group :test do
