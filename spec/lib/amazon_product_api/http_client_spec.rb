@@ -14,8 +14,8 @@ describe AmazonProductAPI::HTTPClient do
     it "throws an error" do
       expect { AmazonProductAPI::HTTPClient.new(query: "anything", env: {}) }
         .to raise_error(AmazonProductAPI::InvalidQueryError,
-          "Environment variables AWS_ACCESS_KEY, AWS_SECRET_KEY, and " +
-          "AWS_ASSOCIATES_TAG are required values. Please make sure they're set."
+                        "Environment variables AWS_ACCESS_KEY, AWS_SECRET_KEY, and " +
+                        "AWS_ASSOCIATES_TAG are required values. Please make sure they're set."
         )
     end
   end

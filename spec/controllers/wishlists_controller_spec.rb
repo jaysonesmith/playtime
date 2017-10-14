@@ -137,8 +137,8 @@ describe WishlistsController do
       it "DOES NOT creates a new Wishlist" do
         expect {
           post :create,
-          params: {wishlist: valid_attributes},
-          session: {}
+               params: {wishlist: valid_attributes},
+               session: {}
         }.not_to change(Wishlist, :count)
       end
 
@@ -155,8 +155,8 @@ describe WishlistsController do
       it "DOES NOT creates a new Wishlist" do
         expect {
           post :create,
-          params: {wishlist: valid_attributes},
-          session: site_manager_session
+               params: {wishlist: valid_attributes},
+               session: site_manager_session
         }.not_to change(Wishlist, :count)
       end
 
@@ -174,8 +174,8 @@ describe WishlistsController do
         it "creates a new Wishlist" do
           expect {
             post :create,
-            params: {wishlist: valid_attributes},
-            session: admin_session
+                 params: {wishlist: valid_attributes},
+                 session: admin_session
           }.to change(Wishlist, :count).by(1)
         end
 
