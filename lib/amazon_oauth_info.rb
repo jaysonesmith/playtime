@@ -6,18 +6,18 @@ class AmazonOAuthInfo
   end
 
   def amazon_user_id
-    hash["uid"]
+    hash['uid']
   end
 
   def email
-    hash["info"]["email"]
+    hash['info']['email']
   end
 
   def name
-    hash["info"]["name"]
+    hash['info']['name']
   end
 
   def zipcode
-    hash["extra"]["postal_code"]
+    hash['extra']['postal_code']
   end
 end

@@ -20,6 +20,6 @@ class ApplicationController < ActionController::Base
   end
 
   def user_not_authorized
-    redirect_to root_url, alert: "You are not authorized to view that page."
+    redirect_to root_url, alert: 'You are not authorized to view that page.'
   end
 end

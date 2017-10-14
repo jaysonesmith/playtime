@@ -10,7 +10,7 @@
 #  quantity         :integer          default(1), not null
 #
 
-require "active_record_csv_generator"
+require 'active_record_csv_generator'
 
 class Pledge < ApplicationRecord
   belongs_to :wishlist_item

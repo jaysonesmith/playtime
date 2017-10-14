@@ -10,13 +10,13 @@ class AdminInitializer
 
   def initialize(env: ENV, out: STDOUT)
     @env = env
-    @email = env["ADMIN_AMAZON_EMAIL"]
-    @name = env["ADMIN_NAME"]
+    @email = env['ADMIN_AMAZON_EMAIL']
+    @name = env['ADMIN_NAME']
     @out = out
 
     unless email
-      raise "Please set the ADMIN_NAME and ADMIN_AMAZON_EMAIL " \
-            "environment variables"
+      raise 'Please set the ADMIN_NAME and ADMIN_AMAZON_EMAIL ' \
+            'environment variables'
     end
   end
 

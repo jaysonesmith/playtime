@@ -160,13 +160,6 @@ Style/SignalException:
   Exclude:
     - 'lib/amazon_product_api/http_client.rb'
 
-# Offense count: 1070
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, SupportedStyles, ConsistentQuotesInMultiline.
-# SupportedStyles: single_quotes, double_quotes
-Style/StringLiterals:
-  Enabled: false
-
 # Offense count: 1
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle, SupportedStyles.

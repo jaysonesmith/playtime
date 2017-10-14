@@ -11,14 +11,14 @@
 require 'rails_helper'
 
 describe Wishlist do
-  describe "without a name" do
+  describe 'without a name' do
     subject { build(:wishlist, name: nil) }
     it { should_not be_valid }
   end
 
-  describe "with a duplicated name" do
-    before { create(:wishlist, name: "Mirage") }
-    subject { build(:wishlist, name: "Mirage") }
+  describe 'with a duplicated name' do
+    before { create(:wishlist, name: 'Mirage') }
+    subject { build(:wishlist, name: 'Mirage') }
     it { should_not be_valid }
   end
 end

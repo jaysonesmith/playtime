@@ -26,7 +26,7 @@ class GuestUser
   end
 
   def display_name
-    "Guest"
+    'Guest'
   end
 
   def pledged?(_)

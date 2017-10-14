@@ -1,4 +1,4 @@
-require "amazon_product_api/http_client"
+require 'amazon_product_api/http_client'
 
 module AmazonProductAPI
   # Contains all code for interacting with the Amazon Product API

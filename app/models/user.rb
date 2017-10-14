@@ -12,8 +12,8 @@
 #  zipcode        :string
 #
 
-require "amazon_oauth_info"
-require "active_record_csv_generator"
+require 'amazon_oauth_info'
+require 'active_record_csv_generator'
 
 class User < ApplicationRecord
   validates :email,          uniqueness: true,

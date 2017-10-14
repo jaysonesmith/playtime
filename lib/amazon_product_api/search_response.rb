@@ -1,4 +1,4 @@
-require "amazon_product_api/search_item"
+require 'amazon_product_api/search_item'
 
 module AmazonProductAPI
   # Parses the Amazon Product API search response
@@ -12,7 +12,7 @@ module AmazonProductAPI
     end
 
     def num_pages
-      (hash.dig("ItemSearchResponse", "Items", "TotalPages") || "1").to_i
+      (hash.dig('ItemSearchResponse', 'Items', 'TotalPages') || '1').to_i
     end
 
     def items(item_class: SearchItem)
@@ -25,22 +25,22 @@ module AmazonProductAPI
 
     def item_attrs_from(hash)
       {
-        asin: hash["ASIN"],
+        asin: hash['ASIN'],
 
-        price_cents: hash.dig("ItemAttributes", "ListPrice", "Amount").to_i,
-        price: hash.dig("OfferSummary", "LowestNewPrice", "FormattedPrice") || "$0.00",
+        price_cents: hash.dig('ItemAttributes', 'ListPrice', 'Amount').to_i,
+        price: hash.dig('OfferSummary', 'LowestNewPrice', 'FormattedPrice') || '$0.00',
 
-        image_url:    hash.dig("SmallImage", "URL") || "",
-        image_width:  hash.dig("SmallImage", "Width") || "",
-        image_height: hash.dig("SmallImage", "Height") || "",
+        image_url:    hash.dig('SmallImage', 'URL') || '',
+        image_width:  hash.dig('SmallImage', 'Width') || '',
+        image_height: hash.dig('SmallImage', 'Height') || '',
 
-        title:              hash.dig("ItemAttributes", "Title"),
-        detail_page_url:    hash["DetailPageURL"],
+        title:              hash.dig('ItemAttributes', 'Title'),
+        detail_page_url:    hash['DetailPageURL'],
       }
     end
 
     def item_hashes
-      hash.dig("ItemSearchResponse", "Items", "Item") || []
+      hash.dig('ItemSearchResponse', 'Items', 'Item') || []
     end
   end
 end
