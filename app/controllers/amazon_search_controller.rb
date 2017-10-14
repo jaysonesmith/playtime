@@ -15,6 +15,7 @@ class AmazonSearchController < ApplicationController
   end
 
   private
+
     def amazon_client
       AmazonProductAPI::HTTPClient.new(query: params[:query],
                                        page_num: params[:page_num] || 1)

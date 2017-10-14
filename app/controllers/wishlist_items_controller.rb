@@ -38,6 +38,7 @@ class WishlistItemsController < ApplicationController
   end
 
   private
+
     def set_wishlist_item
       @wishlist_item = WishlistItem.find(params[:id])
     end
