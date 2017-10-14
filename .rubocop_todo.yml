@@ -48,12 +48,6 @@ Style/GuardClause:
     - 'lib/admin_initializer.rb'
     - 'lib/amazon_product_api/http_client.rb'
 
-# Offense count: 2
-# Cop supports --auto-correct.
-Style/MutableConstant:
-  Exclude:
-    - 'lib/amazon_product_api/http_client.rb'
-
 # Offense count: 5
 # Cop supports --auto-correct.
 # Configuration parameters: Whitelist.
