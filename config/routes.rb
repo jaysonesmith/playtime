@@ -25,6 +25,5 @@ Rails.application.routes.draw do
     get '/signout', action: :destroy, as: :signout
   end
 
-
   root to: 'wishlist_items#index'
 end

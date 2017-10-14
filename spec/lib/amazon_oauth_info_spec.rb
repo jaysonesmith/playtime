@@ -40,5 +40,4 @@ describe "AmazonOAuthInfo" do
     it { should eq 54321 }
   end
 
-
 end

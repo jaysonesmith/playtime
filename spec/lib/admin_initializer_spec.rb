@@ -20,7 +20,6 @@ describe AdminInitializer do
     end
   end
 
-
   context "when ADMIN_AMAZON_EMAIL value is not set" do
     it "should raise an error" do
       expect { AdminInitializer.new(env: {}, out: out) }.to raise_error(

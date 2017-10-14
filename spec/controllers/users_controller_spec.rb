@@ -43,7 +43,6 @@ describe UsersController do
     end
   end
 
-
   describe "GET #show" do
     context "as a normal user" do
       it "DOES NOT return a success response" do
@@ -67,7 +66,6 @@ describe UsersController do
     end
   end
 
-
   describe "GET #edit" do
     context "as a normal user" do
       it "DOES NOT return a success response" do
@@ -90,7 +88,6 @@ describe UsersController do
       end
     end
   end
-
 
   describe "PUT #update" do
     context "as a normal user" do
@@ -135,7 +132,6 @@ describe UsersController do
       end
     end
   end
-
 
   describe "DELETE #destroy" do
     context "as a normal user" do

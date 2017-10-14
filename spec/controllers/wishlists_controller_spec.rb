@@ -22,7 +22,6 @@ describe WishlistsController do
     let(:site_manager_session) { {user_id: site_manager.id} }
   end
 
-
   describe "GET #show" do
     it "returns a success response" do
       wishlist = create(:wishlist, valid_attributes)
@@ -30,7 +29,6 @@ describe WishlistsController do
       expect(response).to be_success
     end
   end
-
 
   describe "GET #new" do
     context "as a guest" do
@@ -68,7 +66,6 @@ describe WishlistsController do
       end
     end
   end
-
 
   describe "GET #edit" do
     context "as a guest" do
@@ -130,7 +127,6 @@ describe WishlistsController do
       end
     end
   end
-
 
   describe "POST #create" do
     context "as a guest" do
@@ -195,7 +191,6 @@ describe WishlistsController do
       end
     end
   end
-
 
   describe "PUT #update" do
     context "as a guest" do
@@ -299,7 +294,6 @@ describe WishlistsController do
       end
     end
   end
-
 
   describe "DELETE #destroy" do
     context "as a guest" do

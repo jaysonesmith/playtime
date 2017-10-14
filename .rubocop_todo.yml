@@ -6,22 +6,6 @@
 # Note that changes in the inspected code, or installation of new
 # versions of RuboCop, may require this file to be generated again.
 
-# Offense count: 24
-# Cop supports --auto-correct.
-Layout/EmptyLines:
-  Exclude:
-    - 'app/models/pledge.rb'
-    - 'bin/setup'
-    - 'config/routes.rb'
-    - 'lib/amazon_product_api/http_client.rb'
-    - 'spec/controllers/pledges_controller_spec.rb'
-    - 'spec/controllers/users_controller_spec.rb'
-    - 'spec/controllers/wishlists_controller_spec.rb'
-    - 'spec/lib/active_record_csv_generator_spec.rb'
-    - 'spec/lib/admin_initializer_spec.rb'
-    - 'spec/lib/amazon_oauth_info_spec.rb'
-    - 'spec/models/user_spec.rb'
-
 # Offense count: 7
 # Cop supports --auto-correct.
 Layout/EmptyLinesAroundAccessModifier:

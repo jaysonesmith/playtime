@@ -23,7 +23,6 @@ describe User do
     it { should_not be_admin }
   end
 
-
   # Validations
 
   context "without an email" do
@@ -48,7 +47,6 @@ describe User do
     subject { build(:user, amazon_user_id: nil) }
     it { should be_valid }
   end
-
 
   # Instance Methods
 
@@ -147,7 +145,6 @@ describe User do
       it { should be nil }
     end
   end
-
 
   # Class Methods
 

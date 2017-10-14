@@ -46,9 +46,7 @@ module AmazonProductAPI
       http.get(url)
     end
 
-
     private
-
 
     attr_reader :query, :page_num, :aws_credentials
 
