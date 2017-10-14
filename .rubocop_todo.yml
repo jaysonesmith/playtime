@@ -36,12 +36,6 @@ Naming/PredicateName:
     - 'spec/**/*'
     - 'lib/amazon_product_api/search_item.rb'
 
-# Offense count: 1
-# Cop supports --auto-correct.
-Style/BlockComments:
-  Exclude:
-    - 'spec/spec_helper.rb'
-
 # Offense count: 34
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle, SupportedStyles, ProceduralMethods, FunctionalMethods, IgnoredMethods.
