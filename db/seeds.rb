@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-a = User.create!(name: "Rebecca Staples", email: "rebecca@playtime.org", admin: true)
+User.create!(name: "Rebecca Staples", email: "rebecca@playtime.org", admin: true)
 u = User.create!(name: "Micah Bales", email: "micahbales@gmail.com")
 
 w = Wishlist.create!(name: "DC General")

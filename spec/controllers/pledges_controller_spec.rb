@@ -22,7 +22,7 @@ describe PledgesController, type: :controller do
   describe "GET #index" do
     context "as a normal user" do
       it "DOES NOT return a success response" do
-        pledge = create(:pledge, :with_user)
+        create(:pledge, :with_user)
         get :index, params: {}, session: user_session
         expect(response).not_to be_success
       end
@@ -30,7 +30,7 @@ describe PledgesController, type: :controller do
 
     context "as an admin" do
       it "returns a success response" do
-        pledge = create(:pledge, :with_user)
+        create(:pledge, :with_user)
         get :index, params: {}, session: admin_session
         expect(response).to be_success
       end

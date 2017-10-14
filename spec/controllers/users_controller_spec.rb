@@ -27,7 +27,7 @@ describe UsersController do
   describe "GET #index" do
     context "as a normal user" do
       it "DOES NOT return a success response" do
-        user = User.create! valid_attributes
+        User.create! valid_attributes
         get :index, params: {}, session: user_session
         expect(response).not_to be_success
       end
@@ -35,7 +35,7 @@ describe UsersController do
 
     context "as an admin" do
       it "returns a success response" do
-        user = User.create! valid_attributes
+        User.create! valid_attributes
         get :index, params: {}, session: admin_session
         expect(response).to be_success
       end

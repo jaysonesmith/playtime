@@ -58,7 +58,7 @@ class UsersController < ApplicationController
 
   def wishlists_from_params
     wishlist_ids = params[:user][:wishlist_ids].map(&:to_i)
-    wishlists = Wishlist.where(id: wishlist_ids)
+    Wishlist.where(id: wishlist_ids)
   end
 
   def export_csv

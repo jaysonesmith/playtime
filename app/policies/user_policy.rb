@@ -17,12 +17,7 @@ class UserPolicy < ApplicationPolicy
   end
 
   def permitted_attributes
-    base_attrs = [:name, :email]
-    if user.admin?
-      base_attrs += [:admin]
-    else
-      base_attrs
-    end
+    user.admin? ? [:name, :email, :admin] : [:name, :email]
   end
 
   private
