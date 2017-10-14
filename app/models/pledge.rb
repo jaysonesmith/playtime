@@ -72,10 +72,6 @@ class Pledge < ApplicationRecord
     anonymous? ? 'Anonymous' : user.display_name
   end
 
-  def user_email
-    anonymous? ? nil : user.email
-  end
-
   def claim_or_increment(user_id:)
     existing_pledge = Pledge.find_by(user_id: user_id,
                                      wishlist_item_id: wishlist_item.id)

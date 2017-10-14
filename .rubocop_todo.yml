@@ -7,11 +7,6 @@
 # versions of RuboCop, may require this file to be generated again.
 
 # Offense count: 1
-Lint/DuplicateMethods:
-  Exclude:
-    - 'app/models/pledge.rb'
-
-# Offense count: 1
 Lint/UriEscapeUnescape:
   Exclude:
     - 'lib/amazon_product_api/http_client.rb'
