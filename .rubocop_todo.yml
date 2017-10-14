@@ -36,15 +36,6 @@ Naming/PredicateName:
     - 'spec/**/*'
     - 'lib/amazon_product_api/search_item.rb'
 
-# Offense count: 2
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, SupportedStyles.
-# SupportedStyles: braces, no_braces, context_dependent
-Style/BracesAroundHashParameters:
-  Exclude:
-    - 'config/initializers/omniauth.rb'
-    - 'lib/active_record_csv_generator.rb'
-
 # Offense count: 49
 Style/Documentation:
   Enabled: false
