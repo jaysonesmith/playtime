@@ -39,6 +39,6 @@ describe 'AmazonOAuthInfo' do
 
   describe '#zipcode' do
     subject { amazon_info.zipcode }
-    it { should eq 54321 }
+    it { should eq 54_321 }
   end
 end

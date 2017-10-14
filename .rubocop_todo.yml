@@ -48,12 +48,6 @@ Style/GuardClause:
     - 'lib/admin_initializer.rb'
     - 'lib/amazon_product_api/http_client.rb'
 
-# Offense count: 3
-# Cop supports --auto-correct.
-# Configuration parameters: Strict.
-Style/NumericLiterals:
-  MinDigits: 15
-
 # Offense count: 4
 # Cop supports --auto-correct.
 # Configuration parameters: PreferredDelimiters.
