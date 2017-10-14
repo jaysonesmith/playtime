@@ -99,7 +99,7 @@ feature "Managing Users:" do
     end
 
     scenario "I see user pledging history on the user page" do
-      user    = create(:user)
+      user = create(:user)
       2.times { create(:pledge, user: user) }
 
       visit user_path(user)
