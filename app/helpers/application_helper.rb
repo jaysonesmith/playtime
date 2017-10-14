@@ -2,11 +2,11 @@
 
 module ApplicationHelper
   def pronoun(user, *args)
-    current_user_pronouns(user, %w(you they), *args)
+    current_user_pronouns(user, %w[you they], *args)
   end
 
   def posessive_pronoun(user, *args)
-    current_user_pronouns(user, %w(your their), *args)
+    current_user_pronouns(user, %w[your their], *args)
   end
 
   def display_date(date)
