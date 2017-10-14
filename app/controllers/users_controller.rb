@@ -23,7 +23,7 @@ class UsersController < ApplicationController
     authorize @user
 
     # if the user's an admin, let them assign site managers
-    if current_user.admin? && wishlist_ids = params[:user][:wishlist_ids]
+    if current_user.admin? && (wishlist_ids = params[:user][:wishlist_ids])
       @user.wishlist_ids = wishlist_ids
     end
 

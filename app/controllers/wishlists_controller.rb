@@ -60,7 +60,7 @@ class WishlistsController < ApplicationController
   end
 
   def attach_site_managers
-    return unless user_ids = params['wishlist']['user_ids']
+    return unless (user_ids = params['wishlist']['user_ids'])
     @wishlist.user_ids = user_ids.delete_if(&:blank?).map(&:to_i)
   end
 end

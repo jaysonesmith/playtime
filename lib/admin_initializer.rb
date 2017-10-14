@@ -21,7 +21,7 @@ class AdminInitializer
   end
 
   def promote_or_create_admin
-    if you = User.find_by(email: email)
+    if (you = User.find_by(email: email))
       you.update!(admin: true)
       out.puts "Promoted #{you.display_name} to admin"
     else
