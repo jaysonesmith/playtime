@@ -39,11 +39,3 @@ Naming/PredicateName:
 # Offense count: 49
 Style/Documentation:
   Enabled: false
-
-# Offense count: 3
-# Configuration parameters: MinBodyLength.
-Style/GuardClause:
-  Exclude:
-    - 'app/controllers/amazon_search_controller.rb'
-    - 'lib/admin_initializer.rb'
-    - 'lib/amazon_product_api/http_client.rb'

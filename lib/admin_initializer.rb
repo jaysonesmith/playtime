@@ -11,15 +11,15 @@ class AdminInitializer
   attr_reader :env
 
   def initialize(env: ENV, out: STDOUT)
+    unless env['ADMIN_AMAZON_EMAIL'] && env['ADMIN_NAME']
+      raise 'Please set the ADMIN_NAME and ADMIN_AMAZON_EMAIL ' \
+            'environment variables'
+    end
+
     @env = env
     @email = env['ADMIN_AMAZON_EMAIL']
     @name = env['ADMIN_NAME']
     @out = out
-
-    unless email
-      raise 'Please set the ADMIN_NAME and ADMIN_AMAZON_EMAIL ' \
-            'environment variables'
-    end
   end
 
   def promote_or_create_admin
