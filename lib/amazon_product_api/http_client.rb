@@ -67,7 +67,7 @@ module AmazonProductAPI
     end
 
     def uri_escape(phrase)
-      URI.escape(phrase.to_s, Regexp.new("[^#{URI::PATTERN::UNRESERVED}]"))
+      URI.encode_www_form_component(phrase.to_s)
     end
 
     def params
