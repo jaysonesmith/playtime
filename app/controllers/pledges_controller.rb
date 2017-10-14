@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
 class PledgesController < ApplicationController
-  before_action :set_pledge, only: [:show, :edit, :update, :destroy]
+  before_action :set_pledge, only: %i[show edit update destroy]
 
   def index
     authorize Pledge
     respond_to do |format|
       format.csv  { export_csv }
       format.html do
-        @pledges = Pledge.includes(:user, wishlist_item: [:item, :wishlist])
+        @pledges = Pledge.includes(:user, wishlist_item: %i[item wishlist])
       end
     end
   end

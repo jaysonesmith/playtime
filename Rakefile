@@ -7,4 +7,4 @@ require_relative 'config/application'
 
 Rails.application.load_tasks
 
-task default: [:"factory_girl:lint", :spec]
+task default: %i[factory_girl:lint spec]

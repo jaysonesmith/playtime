@@ -19,7 +19,7 @@ class UserPolicy < ApplicationPolicy
   end
 
   def permitted_attributes
-    user.admin? ? [:name, :email, :admin] : [:name, :email]
+    user.admin? ? %i[name email admin] : %i[name email]
   end
 
   private

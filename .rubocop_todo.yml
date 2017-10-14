@@ -48,13 +48,6 @@ Style/GuardClause:
     - 'lib/admin_initializer.rb'
     - 'lib/amazon_product_api/http_client.rb'
 
-# Offense count: 17
-# Cop supports --auto-correct.
-# Configuration parameters: MinSize, SupportedStyles.
-# SupportedStyles: percent, brackets
-Style/SymbolArray:
-  EnforcedStyle: brackets
-
 # Offense count: 1
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle, SupportedStyles, AllowSafeAssignment.

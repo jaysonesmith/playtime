@@ -16,7 +16,7 @@ describe ActiveRecordCSVGenerator do
       let(:generator)   { ActiveRecordCSVGenerator.new(ar_resource) }
 
       it 'generates a csv' do
-        csv = generator.generate(columns: [:id, :name])
+        csv = generator.generate(columns: %i[id name])
         expect(csv).to eq "id,name\n1,DC General\n"
       end
 

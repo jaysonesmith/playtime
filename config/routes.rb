@@ -9,13 +9,13 @@ Rails.application.routes.draw do
   # Wishlists & Items
   resources :wishlists, except: [:index] do
     resources :wishlist_items, shallow: true,
-                               only: [:create, :edit, :update, :destroy]
+                               only: %i[create edit update destroy]
     resource :amazon_search,   controller: :amazon_search,
-                               only: [:new, :show]
+                               only: %i[new show]
   end
 
   # Users
-  resources :users, only: [:new, :create, :show, :index, :edit, :update, :destroy]
+  resources :users, only: %i[new create show index edit update destroy]
 
   # OAuth
   controller :sessions do

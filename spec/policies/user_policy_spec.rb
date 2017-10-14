@@ -96,7 +96,7 @@ describe UserPolicy do
       end
 
       it 'equals only :name and :email' do
-        expect(subject).to eq([:name, :email])
+        expect(subject).to eq(%i[name email])
       end
     end
   end
