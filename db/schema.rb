@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 20_170_908_012_526) do
     t.datetime 'updated_at', null: false
     t.bigint 'wishlist_item_id'
     t.integer 'quantity', default: 1, null: false
-    t.index ['user_id', 'wishlist_item_id'], name: 'index_pledges_on_user_id_and_wishlist_item_id', unique: true
+    t.index %w[user_id wishlist_item_id], name: 'index_pledges_on_user_id_and_wishlist_item_id', unique: true
     t.index ['user_id'], name: 'index_pledges_on_user_id'
     t.index ['wishlist_item_id'], name: 'index_pledges_on_wishlist_item_id'
   end
