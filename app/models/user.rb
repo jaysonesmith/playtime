@@ -58,14 +58,14 @@ class User < ApplicationRecord
 
   def self.generate_csv(csv_generator: ActiveRecordCSVGenerator.new(self))
     csv_generator.generate(columns: [
-      :name,
-      :email,
-      :zipcode,
-      ['admin?', ->(u) { u.admin }],
-      ['site manager?', ->(u) { u.site_manager? }],
-      ['pledge count', ->(u) { u.pledge_count }],
-      ['created at', ->(u) { u.created_at }],
-    ])
+                             :name,
+                             :email,
+                             :zipcode,
+                             ['admin?', ->(u) { u.admin }],
+                             ['site manager?', ->(u) { u.site_manager? }],
+                             ['pledge count', ->(u) { u.pledge_count }],
+                             ['created at', ->(u) { u.created_at }],
+                           ])
   end
 
   def self.find_or_create_from_amazon_hash!(hash)

@@ -6,9 +6,9 @@ describe ActiveRecordCSVGenerator do
       # Set an initial db state of one wishlist with two site managers.
       before do
         create(:wishlist, name: 'DC General', id: 1, users: [
-          create(:user, name: 'Jason'),
-          create(:user, name: 'Polly')
-        ])
+                 create(:user, name: 'Jason'),
+                 create(:user, name: 'Polly')
+               ])
       end
       let(:ar_resource) { Wishlist }
       let(:generator)   { ActiveRecordCSVGenerator.new(ar_resource) }
@@ -22,10 +22,10 @@ describe ActiveRecordCSVGenerator do
         it "should return the association value" do
           site_managers_string = ->(record) { record.users.map(&:name).join(" ")}
           csv = generator.generate(columns: [
-              :id,
-              :name,
-              [:site_managers, site_managers_string]
-          ])
+                                     :id,
+                                     :name,
+                                     [:site_managers, site_managers_string]
+                                   ])
           expect(csv).to eq "id,name,site_managers\n1,DC General,Jason Polly\n"
         end
       end

@@ -37,14 +37,14 @@ class Pledge < ApplicationRecord
 
     def generate_csv(csv_generator: ActiveRecordCSVGenerator.new(self))
       csv_generator.generate(columns: [
-        ['pledged item',  ->(p) { p.item_name }],
-        ['wishlist',      ->(p) { p.wishlist_name }],
-        ['pledging user', ->(p) { p.user_display_name }],
-        ['email',         ->(p) { p.user_email }],
-        :quantity,
-        ['created at', ->(p) { p.created_at }],
-        ['updated at', ->(p) { p.updated_at }],
-      ])
+                               ['pledged item', ->(p) { p.item_name }],
+                               ['wishlist',      ->(p) { p.wishlist_name }],
+                               ['pledging user', ->(p) { p.user_display_name }],
+                               ['email',         ->(p) { p.user_email }],
+                               :quantity,
+                               ['created at', ->(p) { p.created_at }],
+                               ['updated at', ->(p) { p.updated_at }],
+                             ])
     end
 
     private
