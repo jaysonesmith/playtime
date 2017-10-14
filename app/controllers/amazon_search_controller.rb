@@ -16,22 +16,22 @@ class AmazonSearchController < ApplicationController
 
   private
 
-    def amazon_client
-      AmazonProductAPI::HTTPClient.new(query: params[:query],
-                                       page_num: params[:page_num] || 1)
-    end
+  def amazon_client
+    AmazonProductAPI::HTTPClient.new(query: params[:query],
+                                     page_num: params[:page_num] || 1)
+  end
 
-    def set_wishlist
-      @wishlist = Wishlist.find(params[:wishlist_id])
-    end
+  def set_wishlist
+    @wishlist = Wishlist.find(params[:wishlist_id])
+  end
 
-    def pundit_user
-      NestedWishlistContext.new(current_user, @wishlist)
-    end
+  def pundit_user
+    NestedWishlistContext.new(current_user, @wishlist)
+  end
 
-    def filter_search
-      if params[:query].blank?
-        redirect_to new_wishlist_amazon_search_path, notice: "query can't be blank"
-      end
+  def filter_search
+    if params[:query].blank?
+      redirect_to new_wishlist_amazon_search_path, notice: "query can't be blank"
     end
+  end
 end

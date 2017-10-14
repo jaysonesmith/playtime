@@ -61,21 +61,21 @@ class PledgesController < ApplicationController
 
   private
 
-    # Use callbacks to share common setup or constraints between actions.
-    def set_pledge
-      @pledge = Pledge.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_pledge
+    @pledge = Pledge.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def pledge_create_params
-      params.require(:pledge).permit(:wishlist_item_id, :user_id)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def pledge_create_params
+    params.require(:pledge).permit(:wishlist_item_id, :user_id)
+  end
 
-    def pledge_update_params
-      params.require(:pledge).permit(:quantity)
-    end
+  def pledge_update_params
+    params.require(:pledge).permit(:quantity)
+  end
 
-    def export_csv
-      send_data(Pledge.generate_csv, filename: "pledge_data#{Time.now.to_i}.csv")
-    end
+  def export_csv
+    send_data(Pledge.generate_csv, filename: "pledge_data#{Time.now.to_i}.csv")
+  end
 end

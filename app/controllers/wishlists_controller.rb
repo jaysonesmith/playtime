@@ -49,18 +49,18 @@ class WishlistsController < ApplicationController
 
   private
 
-    # Use callbacks to share common setup or constraints between actions.
-    def set_wishlist
-      @wishlist = Wishlist.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_wishlist
+    @wishlist = Wishlist.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def wishlist_params
-      params.require(:wishlist).permit(:name)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def wishlist_params
+    params.require(:wishlist).permit(:name)
+  end
 
-    def attach_site_managers
-      return unless user_ids = params['wishlist']['user_ids']
-      @wishlist.user_ids = user_ids.delete_if(&:blank?).map(&:to_i)
-    end
+  def attach_site_managers
+    return unless user_ids = params['wishlist']['user_ids']
+    @wishlist.user_ids = user_ids.delete_if(&:blank?).map(&:to_i)
+  end
 end

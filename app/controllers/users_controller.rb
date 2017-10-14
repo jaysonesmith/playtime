@@ -51,17 +51,17 @@ class UsersController < ApplicationController
 
   private
 
-    # Use callbacks to share common setup or constraints between actions.
-    def set_user
-      @user = User.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_user
+    @user = User.find(params[:id])
+  end
 
-    def wishlists_from_params
-      wishlist_ids = params[:user][:wishlist_ids].map(&:to_i)
-      wishlists = Wishlist.where(id: wishlist_ids)
-    end
+  def wishlists_from_params
+    wishlist_ids = params[:user][:wishlist_ids].map(&:to_i)
+    wishlists = Wishlist.where(id: wishlist_ids)
+  end
 
-    def export_csv
-      send_data(User.generate_csv, filename: "user_data#{Time.now.to_i}.csv")
-    end
+  def export_csv
+    send_data(User.generate_csv, filename: "user_data#{Time.now.to_i}.csv")
+  end
 end

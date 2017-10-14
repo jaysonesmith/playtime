@@ -10,16 +10,16 @@ class ApplicationController < ActionController::Base
 
   private
 
-    def current_user
-      return @current_user if @current_user
-      @current_user = User.find_by(id: session[:user_id]) || GuestUser.new
-    end
+  def current_user
+    return @current_user if @current_user
+    @current_user = User.find_by(id: session[:user_id]) || GuestUser.new
+  end
 
-    def set_wishlists
-      @wishlists = Wishlist.all
-    end
+  def set_wishlists
+    @wishlists = Wishlist.all
+  end
 
-    def user_not_authorized
-      redirect_to root_url, alert: "You are not authorized to view that page."
-    end
+  def user_not_authorized
+    redirect_to root_url, alert: "You are not authorized to view that page."
+  end
 end
