@@ -77,7 +77,8 @@ describe UserPolicy do
   describe "permitted_attributes" do
     context "when the user is an admin" do
       subject { UserPolicy.new(build(:admin), build(:user))
-                          .permitted_attributes }
+                          .permitted_attributes
+      }
 
       it "includes :admin" do
         expect(subject).to include(:admin)
