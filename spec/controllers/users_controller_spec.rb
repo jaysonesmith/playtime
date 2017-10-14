@@ -10,7 +10,7 @@ describe UsersController do
     {
       name: 'Pete Conrad',
       email: 'pconrad@nasa.gov',
-      admin: false,
+      admin: false
     }
   end
 

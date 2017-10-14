@@ -45,7 +45,7 @@ class Pledge < ApplicationRecord
                                ['email',         ->(p) { p.user_email }],
                                :quantity,
                                ['created at', ->(p) { p.created_at }],
-                               ['updated at', ->(p) { p.updated_at }],
+                               ['updated at', ->(p) { p.updated_at }]
                              ])
     end
 

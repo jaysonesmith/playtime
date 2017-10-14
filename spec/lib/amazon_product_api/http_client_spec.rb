@@ -7,7 +7,7 @@ describe AmazonProductAPI::HTTPClient do
     env = {
       'AWS_ACCESS_KEY' => 'aws_access_key',
       'AWS_SECRET_KEY' => 'aws_secret_key',
-      'AWS_ASSOCIATES_TAG' => 'aws_associates_tag',
+      'AWS_ASSOCIATES_TAG' => 'aws_associates_tag'
     }
     AmazonProductAPI::HTTPClient.new(query: 'corgi', page_num: 5, env: env)
   end

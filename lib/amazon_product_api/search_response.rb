@@ -37,7 +37,7 @@ module AmazonProductAPI
         image_height: hash.dig('SmallImage', 'Height') || '',
 
         title:              hash.dig('ItemAttributes', 'Title'),
-        detail_page_url:    hash['DetailPageURL'],
+        detail_page_url:    hash['DetailPageURL']
       }
     end
 

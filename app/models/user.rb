@@ -66,7 +66,7 @@ class User < ApplicationRecord
                              ['admin?', ->(u) { u.admin }],
                              ['site manager?', ->(u) { u.site_manager? }],
                              ['pledge count', ->(u) { u.pledge_count }],
-                             ['created at', ->(u) { u.created_at }],
+                             ['created at', ->(u) { u.created_at }]
                            ])
   end
 

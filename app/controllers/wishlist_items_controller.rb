@@ -63,7 +63,7 @@ class WishlistItemsController < ApplicationController
       image_url:    params[:image_url],
       image_width:  params[:image_width],
       image_height: params[:image_height],
-      name:         params[:name],
+      name:         params[:name]
     }
   end
 end
