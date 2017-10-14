@@ -16,7 +16,7 @@ module AmazonProductAPI
     end
 
     def items(item_class: SearchItem)
-      item_hashes.map { |hash| item_class.new **item_attrs_from(hash) }
+      item_hashes.map { |hash| item_class.new(**item_attrs_from(hash)) }
     end
 
     private
