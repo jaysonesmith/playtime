@@ -17,6 +17,6 @@ module ApplicationHelper
 
   def current_user_pronouns(user, perspectives, capitalize: true)
     perspectives.map!(&:capitalize) if capitalize
-    (user.nil? || user == current_user) ? perspectives[0] : perspectives[1]
+    user.nil? || user == current_user ? perspectives[0] : perspectives[1]
   end
 end
