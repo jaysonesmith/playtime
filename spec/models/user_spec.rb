@@ -57,7 +57,7 @@ describe User do
 
       it 'cannot manage a wishlist' do
         wishlist = build(:wishlist)
-        expect(user.can_manage? wishlist).to be false
+        expect(user.can_manage?(wishlist)).to be false
       end
     end
 
@@ -67,14 +67,14 @@ describe User do
       context 'when they own the specified wishlist' do
         let(:their_wishlist) { subject.wishlists.first }
         it 'can manage the wishlist' do
-          expect(site_manager.can_manage? their_wishlist).to be true
+          expect(site_manager.can_manage?(their_wishlist)).to be true
         end
       end
 
       context "when they don't own the specified wishlist" do
         let(:another_wishlist) { build(:wishlist) }
         it 'cannot manage the wishlist' do
-          expect(site_manager.can_manage? another_wishlist).to be false
+          expect(site_manager.can_manage?(another_wishlist)).to be false
         end
       end
     end
@@ -84,7 +84,7 @@ describe User do
 
       it "can manage any site's wishlist" do
         random_wishlist = build(:wishlist)
-        expect(admin.can_manage? random_wishlist).to be true
+        expect(admin.can_manage?(random_wishlist)).to be true
       end
     end
   end

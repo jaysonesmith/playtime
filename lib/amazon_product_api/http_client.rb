@@ -103,7 +103,7 @@ module AmazonProductAPI
 
     # Generate the signature required by the Product Advertising API
     def signature
-      Base64.encode64(digest_with_key string_to_sign).strip
+      Base64.encode64(digest_with_key(string_to_sign)).strip
     end
 
     def digest_with_key(string)
