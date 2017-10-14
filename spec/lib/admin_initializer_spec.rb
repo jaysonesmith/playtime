@@ -29,10 +29,11 @@ describe AdminInitializer do
   end
 
   describe "#promote_or_create_admin" do
-    let(:env) {{
-      "ADMIN_NAME"          => "Ada Lovelace",
-      "ADMIN_AMAZON_EMAIL"  => "admin@example.org"
-    }}
+    let(:env) {
+      {
+        "ADMIN_NAME" => "Ada Lovelace",
+        "ADMIN_AMAZON_EMAIL" => "admin@example.org"
+      }}
     let(:initializer) { AdminInitializer.new(env: env, out: out) }
 
     context "when the user doesn't yet exist" do
