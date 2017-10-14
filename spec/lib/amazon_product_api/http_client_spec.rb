@@ -1,14 +1,14 @@
 require 'amazon_product_api/http_client'
 
 describe AmazonProductAPI::HTTPClient do
-  let(:client) {
+  let(:client) do
     env = {
       'AWS_ACCESS_KEY' => 'aws_access_key',
       'AWS_SECRET_KEY' => 'aws_secret_key',
       'AWS_ASSOCIATES_TAG' => 'aws_associates_tag',
     }
     AmazonProductAPI::HTTPClient.new(query: 'corgi', page_num: 5, env: env)
-  }
+  end
 
   context 'when credentials are not present' do
     it 'throws an error' do
@@ -20,11 +20,11 @@ describe AmazonProductAPI::HTTPClient do
   end
 
   describe '#env' do
-    before {
+    before do
       allow(ENV).to receive(:[]).with('AWS_ACCESS_KEY') { '' }
       allow(ENV).to receive(:[]).with('AWS_SECRET_KEY') { '' }
       allow(ENV).to receive(:[]).with('AWS_ASSOCIATES_TAG') { '' }
-    }
+    end
     subject { AmazonProductAPI::HTTPClient.new(query: 'anything').env }
 
     it 'defaults to the ENV object' do

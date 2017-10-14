@@ -76,10 +76,10 @@ describe UserPolicy do
 
   describe 'permitted_attributes' do
     context 'when the user is an admin' do
-      subject {
+      subject do
         UserPolicy.new(build(:admin), build(:user))
                   .permitted_attributes
-      }
+      end
 
       it 'includes :admin' do
         expect(subject).to include(:admin)
@@ -87,11 +87,11 @@ describe UserPolicy do
     end
 
     context 'when the user is not an admin' do
-      subject {
+      subject do
         user = build(:user)
         UserPolicy.new(user, user)
                   .permitted_attributes
-      }
+      end
 
       it 'equals only :name and :email' do
         expect(subject).to eq([:name, :email])

@@ -130,11 +130,11 @@ describe WishlistsController do
   describe 'POST #create' do
     context 'as a guest' do
       it 'DOES NOT creates a new Wishlist' do
-        expect {
+        expect do
           post :create,
                params: { wishlist: valid_attributes },
                session: {}
-        }.not_to change(Wishlist, :count)
+        end.not_to change(Wishlist, :count)
       end
 
       it 'DOES NOT return a success response' do
@@ -148,11 +148,11 @@ describe WishlistsController do
       include_context 'site manager'
 
       it 'DOES NOT creates a new Wishlist' do
-        expect {
+        expect do
           post :create,
                params: { wishlist: valid_attributes },
                session: site_manager_session
-        }.not_to change(Wishlist, :count)
+        end.not_to change(Wishlist, :count)
       end
 
       it 'DOES NOT return a success response' do
@@ -167,11 +167,11 @@ describe WishlistsController do
 
       context 'with valid params' do
         it 'creates a new Wishlist' do
-          expect {
+          expect do
             post :create,
                  params: { wishlist: valid_attributes },
                  session: admin_session
-          }.to change(Wishlist, :count).by(1)
+          end.to change(Wishlist, :count).by(1)
         end
 
         it 'redirects to the created wishlist' do
@@ -298,10 +298,10 @@ describe WishlistsController do
     context 'as a guest' do
       it 'DOES NOT destroy the requested wishlist' do
         wishlist = create(:wishlist, valid_attributes)
-        expect {
+        expect do
           delete :destroy, params: { id: wishlist.to_param },
                            session: {}
-        }.not_to change(Wishlist, :count)
+        end.not_to change(Wishlist, :count)
       end
 
       it 'redirects to the root url' do
@@ -317,10 +317,10 @@ describe WishlistsController do
 
       context 'for their wishlist' do
         it 'DOES NOT destroy the requested wishlist' do
-          expect {
+          expect do
             delete :destroy, params: { id: site_manager_wishlist.to_param },
                              session: site_manager_session
-          }.not_to change(Wishlist, :count)
+          end.not_to change(Wishlist, :count)
         end
 
         it 'redirects to the root url' do
@@ -333,10 +333,10 @@ describe WishlistsController do
       context 'for a foreign wishlist' do
         it 'DOES NOT destroy the requested wishlist' do
           wishlist = create(:wishlist, valid_attributes)
-          expect {
+          expect do
             delete :destroy, params: { id: wishlist.to_param },
                              session: site_manager_session
-          }.not_to change(Wishlist, :count)
+          end.not_to change(Wishlist, :count)
         end
 
         it 'redirects to the root url' do
@@ -353,10 +353,10 @@ describe WishlistsController do
 
       it 'destroys the requested wishlist' do
         wishlist = create(:wishlist, valid_attributes)
-        expect {
+        expect do
           delete :destroy, params: { id: wishlist.to_param },
                            session: admin_session
-        }.to change(Wishlist, :count).by(-1)
+        end.to change(Wishlist, :count).by(-1)
       end
 
       it 'redirects to the root url' do

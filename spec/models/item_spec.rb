@@ -30,9 +30,9 @@ describe Item do
       before { create(:item, asin: 'exists') }
 
       it 'should NOT create a new item' do
-        expect {
+        expect do
           Item.find_or_create_by_asin!(item_params)
-        }.not_to change(Item, :count)
+        end.not_to change(Item, :count)
       end
 
       it 'should return an Item with the given asin' do
@@ -43,9 +43,9 @@ describe Item do
 
     context 'when no object with that asin exists' do
       it 'should NOT create a new item' do
-        expect {
+        expect do
           Item.find_or_create_by_asin!(item_params)
-        }.to change(Item, :count).by(1)
+        end.to change(Item, :count).by(1)
       end
 
       it 'should return an Item with the given asin' do

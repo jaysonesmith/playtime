@@ -39,10 +39,10 @@ describe Pledge do
     let(:initial_pledge) { create(:pledge, :with_user) }
 
     context 'when the user and wishlist are duplicated' do
-      subject {
+      subject do
         build(:pledge, user: initial_pledge.user,
                        wishlist_item: initial_pledge.wishlist_item)
-      }
+      end
       it { should_not be_valid }
     end
 
@@ -106,9 +106,9 @@ describe Pledge do
       end
 
       it 'should delete the previous pledge' do
-        expect {
+        expect do
           pledge.claim_or_increment(user_id: user.id)
-        }.to change(Pledge, :count).by(1)
+        end.to change(Pledge, :count).by(1)
       end
 
       it 'should increment the quantity' do
@@ -138,13 +138,13 @@ describe Pledge do
   end
 
   describe '.increment_or_new' do
-    let(:params) {
+    let(:params) do
       attributes_for(:pledge).merge(
         # attributes_for doesn't include associations
         user_id: create(:user).id,
         wishlist_item_id: create(:wishlist_item).id
       )
-    }
+    end
 
     context "when identical pledge doesn't exist" do
       it 'should build a new pledge' do

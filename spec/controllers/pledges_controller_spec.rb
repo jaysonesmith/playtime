@@ -7,9 +7,9 @@ describe PledgesController, type: :controller do
   # This should return the minimal set of attributes required to create a valid
   # Pledge. As you add validations to Pledge, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) {
+  let(:valid_attributes) do
     { user_id: pledging_user.id, wishlist_item_id: create(:wishlist_item).id }
-  }
+  end
   let(:invalid_attributes) { { quantity: -1 } }
 
   # This should return the minimal set of values that should be in the session
@@ -176,9 +176,9 @@ describe PledgesController, type: :controller do
   describe 'POST #create' do
     context 'with valid params' do
       it 'creates a new Pledge' do
-        expect {
+        expect do
           post :create, params: { pledge: valid_attributes }, session: {}
-        }.to change(Pledge, :count).by(1)
+        end.to change(Pledge, :count).by(1)
       end
 
       it 'redirects to the created pledge' do
@@ -196,17 +196,17 @@ describe PledgesController, type: :controller do
 
     context 'when the pledge already exists' do
       let(:original_pledge) { create(:pledge, user: pledging_user) }
-      let!(:repeat_attributes) {
+      let!(:repeat_attributes) do
         valid_attributes.merge(
           user_id: original_pledge.user.id,
           wishlist_item_id: original_pledge.wishlist_item.id
         )
-      }
+      end
 
       it 'DOES NOT create a new Pledge' do
-        expect {
+        expect do
           post :create, params: { pledge: repeat_attributes }, session: {}
-        }.not_to change(Pledge, :count)
+        end.not_to change(Pledge, :count)
       end
 
       it 'increments the existing pledge quantity' do
@@ -225,18 +225,18 @@ describe PledgesController, type: :controller do
     context 'as a normal user' do
       it 'DOES NOT destroy the requested pledge' do
         pledge = create(:pledge, :with_user)
-        expect {
+        expect do
           delete :destroy, params: { id: pledge.to_param }, session: user_session
-        }.not_to change(Pledge, :count)
+        end.not_to change(Pledge, :count)
       end
     end
 
     context 'as the pledging user' do
       it 'destroys the requested pledge' do
         pledge = create(:pledge, user: pledging_user)
-        expect {
+        expect do
           delete :destroy, params: { id: pledge.to_param }, session: user_session
-        }.to change(Pledge, :count).by(-1)
+        end.to change(Pledge, :count).by(-1)
       end
 
       it 'redirects to the user page' do
@@ -249,9 +249,9 @@ describe PledgesController, type: :controller do
     context 'as an admin' do
       it 'destroys the requested pledge' do
         pledge = create(:pledge, :with_user)
-        expect {
+        expect do
           delete :destroy, params: { id: pledge.to_param }, session: admin_session
-        }.to change(Pledge, :count).by(-1)
+        end.to change(Pledge, :count).by(-1)
       end
 
       it 'redirects to the user page' do

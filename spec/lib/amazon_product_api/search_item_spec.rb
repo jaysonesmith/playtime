@@ -15,20 +15,20 @@ describe AmazonProductAPI::SearchItem do
 
   describe '#valid_image?' do
     context 'when all image attributes are valid' do
-      subject {
+      subject do
         AmazonProductAPI::SearchItem.new(image_url: 'image url',
                                          image_height: 600,
                                          image_width: 800)
-      }
+      end
       it { should have_valid_image }
     end
 
     context 'when there is no image url' do
-      subject {
+      subject do
         AmazonProductAPI::SearchItem.new(image_url: nil,
                                          image_height: 100,
                                          image_width: 100)
-      }
+      end
       it { should_not have_valid_image }
     end
   end

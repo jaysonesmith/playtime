@@ -4,13 +4,13 @@ describe UsersController do
   # This should return the minimal set of attributes required to create a valid
   # User. As you add validations to User, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) {
+  let(:valid_attributes) do
     {
       name: 'Pete Conrad',
       email: 'pconrad@nasa.gov',
       admin: false,
     }
-  }
+  end
 
   let(:invalid_attributes) { { email: nil } }
 
@@ -137,9 +137,9 @@ describe UsersController do
       before { user_session } # initialize outside of expect block
       it 'DOES NOT destroy the requested user' do
         user = User.create! valid_attributes
-        expect {
+        expect do
           delete :destroy, params: { id: user.to_param }, session: user_session
-        }.not_to change(User, :count)
+        end.not_to change(User, :count)
       end
     end
 
@@ -148,9 +148,9 @@ describe UsersController do
 
       it 'destroys the requested user' do
         user = User.create! valid_attributes
-        expect {
+        expect do
           delete :destroy, params: { id: user.to_param }, session: admin_session
-        }.to change(User, :count).by(-1)
+        end.to change(User, :count).by(-1)
       end
 
       it 'redirects to the users list' do

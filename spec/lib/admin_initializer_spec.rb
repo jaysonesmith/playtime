@@ -2,17 +2,17 @@ require 'rails_helper'
 require 'admin_initializer'
 
 describe AdminInitializer do
-  let(:out) {
+  let(:out) do
     out = double('STDOUT')
     allow(out).to receive(:puts)
     out
-  }
+  end
 
   describe '#env' do
-    before {
+    before do
       allow(ENV).to receive(:[]).with('ADMIN_NAME') { '' }
       allow(ENV).to receive(:[]).with('ADMIN_AMAZON_EMAIL') { '' }
-    }
+    end
     subject { AdminInitializer.new.env }
 
     it 'defaults to the ENV object' do
@@ -29,11 +29,12 @@ describe AdminInitializer do
   end
 
   describe '#promote_or_create_admin' do
-    let(:env) {
+    let(:env) do
       {
         'ADMIN_NAME' => 'Ada Lovelace',
         'ADMIN_AMAZON_EMAIL' => 'admin@example.org'
-      }}
+      }
+    end
     let(:initializer) { AdminInitializer.new(env: env, out: out) }
 
     context "when the user doesn't yet exist" do

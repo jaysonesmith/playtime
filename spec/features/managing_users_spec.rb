@@ -35,10 +35,10 @@ feature 'Managing Users:' do
   end
 
   context 'As an admin' do
-    before(:each) {
+    before(:each) do
       2.times { create(:user) }
       login(as: :admin, email: 'admin@example.com')
-    }
+    end
     after(:each) { reset_amazon_omniauth }
 
     scenario 'I can view a list of users' do

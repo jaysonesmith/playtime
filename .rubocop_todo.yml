@@ -36,27 +36,6 @@ Naming/PredicateName:
     - 'spec/**/*'
     - 'lib/amazon_product_api/search_item.rb'
 
-# Offense count: 34
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, SupportedStyles, ProceduralMethods, FunctionalMethods, IgnoredMethods.
-# SupportedStyles: line_count_based, semantic, braces_for_chaining
-# ProceduralMethods: benchmark, bm, bmbm, create, each_with_object, measure, new, realtime, tap, with_object
-# FunctionalMethods: let, let!, subject, watch
-# IgnoredMethods: lambda, proc, it
-Style/BlockDelimiters:
-  Exclude:
-    - 'spec/controllers/pledges_controller_spec.rb'
-    - 'spec/controllers/users_controller_spec.rb'
-    - 'spec/controllers/wishlists_controller_spec.rb'
-    - 'spec/features/managing_users_spec.rb'
-    - 'spec/lib/admin_initializer_spec.rb'
-    - 'spec/lib/amazon_product_api/http_client_spec.rb'
-    - 'spec/lib/amazon_product_api/search_item_spec.rb'
-    - 'spec/models/item_spec.rb'
-    - 'spec/models/pledge_spec.rb'
-    - 'spec/models/user_spec.rb'
-    - 'spec/policies/user_policy_spec.rb'
-
 # Offense count: 2
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle, SupportedStyles.
