@@ -19,7 +19,7 @@ module Playtime
 
     # Prevent generators from creating empty stylesheets we won't use
     config.generators do |g|
-      g.stylesheets     false
+      g.stylesheets false
     end
   end
 end
