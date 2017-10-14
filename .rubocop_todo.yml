@@ -6,18 +6,6 @@
 # Note that changes in the inspected code, or installation of new
 # versions of RuboCop, may require this file to be generated again.
 
-# Offense count: 180
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, SupportedStyles, EnforcedStyleForEmptyBraces, SupportedStylesForEmptyBraces.
-# SupportedStyles: space, no_space, compact
-# SupportedStylesForEmptyBraces: space, no_space
-Layout/SpaceInsideHashLiteralBraces:
-  Exclude:
-    - 'lib/active_record_csv_generator.rb'
-    - 'spec/controllers/pledges_controller_spec.rb'
-    - 'spec/controllers/users_controller_spec.rb'
-    - 'spec/controllers/wishlists_controller_spec.rb'
-
 # Offense count: 1
 # Cop supports --auto-correct.
 Layout/SpaceInsideParens:

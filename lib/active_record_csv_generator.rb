@@ -79,7 +79,7 @@ class ActiveRecordCSVGenerator
   #     }
   #
   def evaluate_columns(columns)
-    columns.reduce({headers: [], fields: []}) do |acc, column|
+    columns.reduce({ headers: [], fields: [] }) do |acc, column|
       if column.is_a? Array
         acc[:headers] << column[0].to_s
         acc[:fields]  << column[1]

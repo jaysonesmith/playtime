@@ -12,7 +12,7 @@ describe UsersController do
     }
   }
 
-  let(:invalid_attributes) { {email: nil} }
+  let(:invalid_attributes) { { email: nil } }
 
   let(:normal_user) { create(:user) }
   let(:admin) { create(:admin) }
@@ -21,8 +21,8 @@ describe UsersController do
   # in order to pass any filters (e.g. authentication) defined in
   # UsersController. Be sure to keep this updated too.
   let(:guest_session) { {} } # intentionally blank
-  let(:user_session)  { {user_id: normal_user.id} } # intentionally blank
-  let(:admin_session) { {user_id: admin.id} }
+  let(:user_session)  { { user_id: normal_user.id } } # intentionally blank
+  let(:admin_session) { { user_id: admin.id } }
 
   describe "GET #index" do
     context "as a normal user" do
@@ -46,12 +46,12 @@ describe UsersController do
     context "as a normal user" do
       it "DOES NOT return a success response" do
         user = User.create! valid_attributes
-        get :show, params: {id: user.to_param}, session: user_session
+        get :show, params: { id: user.to_param }, session: user_session
         expect(response).not_to be_success
       end
       it "redirects to the root url" do
         user = User.create! valid_attributes
-        get :show, params: {id: user.to_param}, session: user_session
+        get :show, params: { id: user.to_param }, session: user_session
         expect(response).to redirect_to(root_url)
       end
     end
@@ -59,7 +59,7 @@ describe UsersController do
     context "as an admin" do
       it "returns a success response" do
         user = User.create! valid_attributes
-        get :show, params: {id: user.to_param}, session: admin_session
+        get :show, params: { id: user.to_param }, session: admin_session
         expect(response).to be_success
       end
     end
@@ -69,12 +69,12 @@ describe UsersController do
     context "as a normal user" do
       it "DOES NOT return a success response" do
         user = User.create! valid_attributes
-        get :edit, params: {id: user.to_param}, session: user_session
+        get :edit, params: { id: user.to_param }, session: user_session
         expect(response).not_to be_success
       end
       it "redirects to the root url" do
         user = User.create! valid_attributes
-        get :edit, params: {id: user.to_param}, session: user_session
+        get :edit, params: { id: user.to_param }, session: user_session
         expect(response).to redirect_to(root_url)
       end
     end
@@ -82,7 +82,7 @@ describe UsersController do
     context "as an admin" do
       it "returns a success response" do
         user = User.create! valid_attributes
-        get :edit, params: {id: user.to_param}, session: admin_session
+        get :edit, params: { id: user.to_param }, session: admin_session
         expect(response).to be_success
       end
     end
@@ -90,11 +90,11 @@ describe UsersController do
 
   describe "PUT #update" do
     context "as a normal user" do
-      let(:new_attributes) { {email: "pete.conrad@nasa.gov"} }
+      let(:new_attributes) { { email: "pete.conrad@nasa.gov" } }
 
       it "DOES NOT update the requested user" do
         user = User.create! valid_attributes
-        put :update, params: {id: user.to_param, user: new_attributes},
+        put :update, params: { id: user.to_param, user: new_attributes },
                      session: user_session
         user.reload
         expect(user.email).to eq(valid_attributes[:email])
@@ -103,11 +103,11 @@ describe UsersController do
 
     context "as an admin" do
       context "with valid params" do
-        let(:new_attributes) { {email: "pete.conrad@nasa.gov"} }
+        let(:new_attributes) { { email: "pete.conrad@nasa.gov" } }
 
         it "updates the requested user" do
           user = User.create! valid_attributes
-          put :update, params: {id: user.to_param, user: new_attributes},
+          put :update, params: { id: user.to_param, user: new_attributes },
                        session: admin_session
           user.reload
           expect(user.email).to eq("pete.conrad@nasa.gov")
@@ -115,7 +115,7 @@ describe UsersController do
 
         it "redirects to the user" do
           user = User.create! valid_attributes
-          put :update, params: {id: user.to_param, user: valid_attributes},
+          put :update, params: { id: user.to_param, user: valid_attributes },
                        session: admin_session
           expect(response).to redirect_to(user)
         end
@@ -124,7 +124,7 @@ describe UsersController do
       context "with invalid params" do
         it "returns a success response (i.e. to display the 'edit' template)" do
           user = User.create! valid_attributes
-          put :update, params: {id: user.to_param, user: invalid_attributes},
+          put :update, params: { id: user.to_param, user: invalid_attributes },
                        session: admin_session
           expect(response).to be_success
         end
@@ -138,7 +138,7 @@ describe UsersController do
       it "DOES NOT destroy the requested user" do
         user = User.create! valid_attributes
         expect {
-          delete :destroy, params: {id: user.to_param}, session: user_session
+          delete :destroy, params: { id: user.to_param }, session: user_session
         }.not_to change(User, :count)
       end
     end
@@ -149,19 +149,19 @@ describe UsersController do
       it "destroys the requested user" do
         user = User.create! valid_attributes
         expect {
-          delete :destroy, params: {id: user.to_param}, session: admin_session
+          delete :destroy, params: { id: user.to_param }, session: admin_session
         }.to change(User, :count).by(-1)
       end
 
       it "redirects to the users list" do
         user = User.create! valid_attributes
-        delete :destroy, params: {id: user.to_param}, session: admin_session
+        delete :destroy, params: { id: user.to_param }, session: admin_session
         expect(response).to redirect_to(users_url)
       end
 
       it "does not allow the last admin to delete their account" do
         expect(User.admin.count).to eq 1
-        delete :destroy, params: {id: admin.to_param}, session: admin_session
+        delete :destroy, params: { id: admin.to_param }, session: admin_session
         expect(User.admin).to exist
       end
     end
