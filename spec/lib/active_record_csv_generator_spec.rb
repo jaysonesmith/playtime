@@ -20,7 +20,7 @@ describe ActiveRecordCSVGenerator do
 
       context "when a value is an association" do
         it "should return the association value" do
-          site_managers_string = ->(record) { record.users.map(&:name).join(" ")}
+          site_managers_string = ->(record) { record.users.map(&:name).join(" ") }
           csv = generator.generate(columns: [
                                      :id,
                                      :name,

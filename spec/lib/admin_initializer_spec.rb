@@ -45,7 +45,7 @@ describe AdminInitializer do
 
       describe "the total number of users" do
         it "should increase by 1" do
-          expect {initializer.promote_or_create_admin}.to change {User.count}.by(1)
+          expect { initializer.promote_or_create_admin }.to change { User.count }.by(1)
         end
       end
 
@@ -76,7 +76,7 @@ describe AdminInitializer do
 
       describe "the total number of users" do
         it "should not change" do
-          expect {initializer.promote_or_create_admin}.not_to change {User.count}
+          expect { initializer.promote_or_create_admin }.not_to change { User.count }
         end
       end
 
