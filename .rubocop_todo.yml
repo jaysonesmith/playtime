@@ -7,14 +7,6 @@
 # versions of RuboCop, may require this file to be generated again.
 
 # Offense count: 1
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyleAlignWith, SupportedStylesAlignWith.
-# SupportedStylesAlignWith: either, start_of_block, start_of_line
-Lint/BlockAlignment:
-  Exclude:
-    - 'spec/controllers/wishlists_controller_spec.rb'
-
-# Offense count: 1
 Lint/DuplicateMethods:
   Exclude:
     - 'app/models/pledge.rb'

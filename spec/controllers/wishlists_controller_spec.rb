@@ -217,24 +217,24 @@ describe WishlistsController do
       include_context "site manager"
 
       context "for their wishlist" do
-      let(:new_attributes) { { name: "Annandale General" } }
+        let(:new_attributes) { { name: "Annandale General" } }
 
-      it "DOES NOT update the wishlist" do
-        name = site_manager_wishlist.name
-        put :update, params: { id: site_manager_wishlist.to_param,
-                               wishlist: new_attributes },
-                     session: site_manager_session
-        site_manager_wishlist.reload
-        expect(site_manager_wishlist.name).to eq name
-      end
+        it "DOES NOT update the wishlist" do
+          name = site_manager_wishlist.name
+          put :update, params: { id: site_manager_wishlist.to_param,
+                                 wishlist: new_attributes },
+                       session: site_manager_session
+          site_manager_wishlist.reload
+          expect(site_manager_wishlist.name).to eq name
+        end
 
-      it "DOES NOT return a success response" do
-        put :update, params: { id: site_manager_wishlist.to_param,
-                               wishlist: valid_attributes },
-                     session: site_manager_session
-        expect(response).not_to be_successful
+        it "DOES NOT return a success response" do
+          put :update, params: { id: site_manager_wishlist.to_param,
+                                 wishlist: valid_attributes },
+                       session: site_manager_session
+          expect(response).not_to be_successful
+        end
       end
-    end
 
       context "for a foreign wishlist" do
         let(:new_attributes) { { name: "Annandale General" } }
