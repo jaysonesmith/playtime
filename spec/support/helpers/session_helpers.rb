@@ -8,7 +8,7 @@ module Helpers
       OmniAuth.config.mock_auth[:amazon] = OmniAuth::AuthHash.new({
         provider: 'amazon',
         info: { email: email },
-        extra: { postal_code: 54_321 }
+        extra: { postal_code: 54321 }
       }.merge(custom_params))
     end
 

@@ -4,7 +4,7 @@ AllCops:
   # Use the following Exclude to prevent Rubocop from linting specific
   # directories or files.
   Exclude:
-    - db/*.rb
+    - db/**/*
   TargetRubyVersion: 2.4.1
   # Cop names are not displayed in offense messages by default. Change behavior
   # by overriding DisplayCopNames, or by giving the `-D/--display-cop-names`
@@ -14,3 +14,6 @@ AllCops:
   # behavior by overriding `DisplayStyleGuide`, or by giving the
   # `-S/--display-style-guide` option.
   DisplayStyleGuide: true
+
+Style/NumericLiterals:
+  Enabled: false

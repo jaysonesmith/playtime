@@ -32,7 +32,7 @@ module AmazonProductAPI
     def url
       raise InvalidQueryError unless query && page_num
 
-      "http://#{ENDPOINT}#{REQUEST_URI}" + # base
+      "http://#{ENDPOINT}#{REQUEST_URI}" +    # base
         "?#{canonical_query_string}" +        # query
         "&Signature=#{uri_escape(signature)}" # signature
     end
