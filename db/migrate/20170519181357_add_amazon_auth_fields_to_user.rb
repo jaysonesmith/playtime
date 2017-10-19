@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class AddAmazonAuthFieldsToUser < ActiveRecord::Migration[5.1]
   def change
     add_column :users, :amazon_user_id, :string

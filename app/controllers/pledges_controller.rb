@@ -68,7 +68,8 @@ class PledgesController < ApplicationController
     @pledge = Pledge.find(params[:id])
   end
 
-  # Never trust parameters from the scary internet, only allow the white list through.
+  # Never trust parameters from the scary internet,
+  # only allow the white list through.
   def pledge_create_params
     params.require(:pledge).permit(:wishlist_item_id, :user_id)
   end

@@ -13,7 +13,8 @@ class WishlistItemsController < ApplicationController
     authorize wishlist.wishlist_items.build
 
     @wishlist_item = wishlist.wishlist_items.create!(wishlist_item_create_params)
-    redirect_to wishlist_path(@wishlist_item.wishlist), notice: "Added #{@wishlist_item.name}."
+    redirect_to(wishlist_path(@wishlist_item.wishlist),
+                notice: "Added #{@wishlist_item.name}.")
   end
 
   def edit
@@ -24,7 +25,8 @@ class WishlistItemsController < ApplicationController
     authorize @wishlist_item
 
     if @wishlist_item.update(wishlist_item_params)
-      redirect_to @wishlist_item.wishlist, notice: 'Wishlist item was successfully updated.'
+      redirect_to(@wishlist_item.wishlist,
+                  notice: 'Wishlist item was successfully updated.')
     else
       render :edit
     end
@@ -45,7 +47,8 @@ class WishlistItemsController < ApplicationController
     @wishlist_item = WishlistItem.find(params[:id])
   end
 
-  # Never trust parameters from the scary internet, only allow the white list through.
+  # Never trust parameters from the scary internet,
+  # only allow the white list through.
   def wishlist_item_params
     params.require(:wishlist_item).permit(:quantity, :priority, :staff_message)
   end

@@ -38,14 +38,12 @@ class UsersController < ApplicationController
 
   def destroy
     authorize @user
-    if @user.admin? && User.admin.count < 2
-      redirect_to users_url, notice: 'This account is the only remaining Admin user. Please assign another Admin before deleting this account'
-      return
-    end
+    prevent_admin_delete && return if @user.admin? && User.admin.count < 2
     @user.destroy
     if current_user == @user
       reset_session
-      redirect_to root_url, notice: 'You have successfully deleted your account.'
+      redirect_to root_url, notice: 'You have successfully deleted your \
+      account.'
     else
       redirect_to users_url, notice: 'User was successfully destroyed.'
     end
@@ -65,5 +63,10 @@ class UsersController < ApplicationController
 
   def export_csv
     send_data(User.generate_csv, filename: "user_data#{Time.now.to_i}.csv")
+  end
+
+  def prevent_admin_delete
+    redirect_to users_url, notice: 'This account is the only remaining Admin \
+    user. Please assign another Admin before deleting this account'
   end
 end

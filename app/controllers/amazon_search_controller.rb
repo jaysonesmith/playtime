@@ -32,6 +32,7 @@ class AmazonSearchController < ApplicationController
   end
 
   def filter_search
-    redirect_to new_wishlist_amazon_search_path, notice: "query can't be blank" if params[:query].blank?
+    params[:query].blank? && redirect_to(new_wishlist_amazon_search_path,
+                                         notice: "query can't be blank")
   end
 end

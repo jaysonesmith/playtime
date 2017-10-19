@@ -56,7 +56,8 @@ class WishlistsController < ApplicationController
     @wishlist = Wishlist.find(params[:id])
   end
 
-  # Never trust parameters from the scary internet, only allow the white list through.
+  # Never trust parameters from the scary internet,
+  # only allow the white list through.
   def wishlist_params
     params.require(:wishlist).permit(:name)
   end
