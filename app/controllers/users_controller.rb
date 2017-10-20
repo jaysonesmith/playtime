@@ -42,8 +42,8 @@ class UsersController < ApplicationController
     @user.destroy
     if current_user == @user
       reset_session
-      redirect_to root_url, notice: 'You have successfully deleted your \
-      account.'
+      redirect_to root_url, notice: 'You have successfully deleted your '\
+      'account.'
     else
       redirect_to users_url, notice: 'User was successfully destroyed.'
     end
