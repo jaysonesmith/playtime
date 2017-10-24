@@ -39,4 +39,25 @@ describe WishlistItem do
     subject { build(:wishlist_item, quantity: -10) }
     it { should_not be_valid }
   end
+
+  describe '#priority_order' do
+    let! :item_1 { create(:wishlist_item, priority: :medium) }
+    let! :item_2 { create(:wishlist_item, priority: :high) }
+    let! :item_3 { create(:wishlist_item, priority: :low) }
+
+    it 'with returns the items ordered by priority' do
+      expect(WishlistItem.all.priority_order.pluck(:id))
+        .to match_array([item_2.id, item_1.id, item_3.id])
+    end
+  end
+
+  describe 'When a WishlistItem with pledges is deleted' do
+    it 'Destroys the pledges too' do
+    wishlist_item = create(:wishlist_item)
+    pledge        = create(:pledge)
+
+    wishlist_item.pledges << pledge
+    expect { wishlist_item.destroy }.to change(Pledge, :count).by(-1)
+    end
+  end
 end
